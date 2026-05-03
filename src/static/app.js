@@ -31,7 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function applyTheme(isDark) {
     document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
     darkModeToggle.textContent = isDark ? "☀️" : "🌙";
-    darkModeToggle.title = isDark ? "Switch to light mode" : "Switch to dark mode";
+    const label = isDark ? "Switch to light mode" : "Switch to dark mode";
+    darkModeToggle.title = label;
+    darkModeToggle.setAttribute("aria-label", label);
   }
 
   const savedTheme = localStorage.getItem("theme");
